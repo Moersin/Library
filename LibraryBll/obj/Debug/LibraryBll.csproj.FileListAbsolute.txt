@@ -1,0 +1,11 @@
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryBll.dll
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryBll.pdb
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryDal.dll
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryModels.dll
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryDal.pdb
+D:\Documents\source\repos\LibraryBll\bin\Debug\LibraryModels.pdb
+D:\Documents\source\repos\LibraryBll\obj\Debug\LibraryBll.csprojAssemblyReference.cache
+D:\Documents\source\repos\LibraryBll\obj\Debug\LibraryBll.csproj.CoreCompileInputs.cache
+D:\Documents\source\repos\LibraryBll\obj\Debug\LibraryBll.csproj.CopyComplete
+D:\Documents\source\repos\LibraryBll\obj\Debug\LibraryBll.dll
+D:\Documents\source\repos\LibraryBll\obj\Debug\LibraryBll.pdb

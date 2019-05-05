@@ -1,0 +1,6 @@
+D:\Documents\source\repos\LibraryModels\bin\Debug\LibraryModels.dll
+D:\Documents\source\repos\LibraryModels\bin\Debug\LibraryModels.pdb
+D:\Documents\source\repos\LibraryModels\obj\Debug\LibraryModels.csprojAssemblyReference.cache
+D:\Documents\source\repos\LibraryModels\obj\Debug\LibraryModels.csproj.CoreCompileInputs.cache
+D:\Documents\source\repos\LibraryModels\obj\Debug\LibraryModels.dll
+D:\Documents\source\repos\LibraryModels\obj\Debug\LibraryModels.pdb

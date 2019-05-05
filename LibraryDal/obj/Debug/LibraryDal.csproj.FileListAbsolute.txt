@@ -1,0 +1,9 @@
+D:\Documents\source\repos\LibraryDal\bin\Debug\LibraryDal.dll
+D:\Documents\source\repos\LibraryDal\bin\Debug\LibraryDal.pdb
+D:\Documents\source\repos\LibraryDal\bin\Debug\LibraryModels.dll
+D:\Documents\source\repos\LibraryDal\bin\Debug\LibraryModels.pdb
+D:\Documents\source\repos\LibraryDal\obj\Debug\LibraryDal.csprojAssemblyReference.cache
+D:\Documents\source\repos\LibraryDal\obj\Debug\LibraryDal.csproj.CoreCompileInputs.cache
+D:\Documents\source\repos\LibraryDal\obj\Debug\LibraryDal.csproj.CopyComplete
+D:\Documents\source\repos\LibraryDal\obj\Debug\LibraryDal.dll
+D:\Documents\source\repos\LibraryDal\obj\Debug\LibraryDal.pdb
