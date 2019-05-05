@@ -68,9 +68,6 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-            //indexFormStu indexFormStu = new indexFormStu();
-            //MessageBox.Show(Convert .ToString(indexFormStu.UId));
         }
 
         private void BtnBorrowQuery_Click(object sender, EventArgs e)
