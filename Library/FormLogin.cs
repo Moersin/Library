@@ -62,12 +62,9 @@ namespace Library
                     //MessageBox.Show("登陆成功");
                     //跳转到图书管理系统-读者页面
                     indexFormStu indexFormStu = new indexFormStu();
-                    //indexFormStu.UId = Convert.ToInt32(this.textFormId.Text.Trim());
-                   // indexFormStu.UName = ss.GetNameById(this.textFormId.Text.Trim());
                     indexFormStu.Show();
                     this.Hide();
                     LoginId = this.textFormId.Text.Trim();
-                    //MessageBox.Show(LoginId);
                 }
                 else
                 {
@@ -101,13 +98,5 @@ namespace Library
         {
             Application.Exit();
         }
-
-        //获取当前登陆人的id和name
-        /*public string GetLoginId()
-        {
-            string LoginId = this.textFormId.Text.Trim();
-            MessageBox.Show(LoginId);
-            return LoginId;
-        }*/
     }
 }
