@@ -62,6 +62,7 @@ namespace Library
             //this.issTableAdapter.Fill(this.libraryDataSet.Iss);
             try
             {
+                this.tbBorrowSId.Text = Students.value;
                 BorrowDataBind();
             }
             catch (Exception ex)
@@ -135,13 +136,6 @@ namespace Library
         {
             try
             {
-                /*if (!CheckUpdate())
-                {
-                    return;
-                }*/
-                FormLogin formLogin = new FormLogin();
-                this.tbBorrowSId.Text = formLogin.LoginId;
-                //MessageBox.Show(FormLogin.LoginId);
                 Iss iss = new Iss();
                 iss.IssBookId = Convert.ToInt32(this.tbBorrowBId.Text.Trim());
                 iss.IssBookName = this.tbBorrowBName.Text.Trim();

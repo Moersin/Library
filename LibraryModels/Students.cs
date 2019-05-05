@@ -17,6 +17,8 @@ namespace LibraryModels
         private string email = string.Empty;
         private string address = string.Empty;
 
+        public static string value;
+
         public string LoginPwd { get => loginPwd; set => loginPwd = value; }
         public string Name { get => name; set => name = value; }
         public string Sex { get => sex; set => sex = value; }

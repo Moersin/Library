@@ -63,6 +63,7 @@ namespace Library
             //this.issTableAdapter.Fill(this.libraryDataSet.Iss);
             try
             {
+                this.textBox1.Text = Students.value;
                 IssDataBind();
             }
             catch (Exception ex)

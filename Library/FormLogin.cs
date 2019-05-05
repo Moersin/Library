@@ -21,7 +21,6 @@ namespace Library
         public const string INPUTNOEXIST = "输入的账号或密码错误";
         AdminManager am = new AdminManager();
         StudentsManager ss = new StudentsManager();
-        public string LoginId = string.Empty;
 
         //构造函数
         public FormLogin()
@@ -64,7 +63,8 @@ namespace Library
                     indexFormStu indexFormStu = new indexFormStu();
                     indexFormStu.Show();
                     this.Hide();
-                    LoginId = this.textFormId.Text.Trim();
+
+                    Students.value= this.textFormId.Text.Trim();
                 }
                 else
                 {
