@@ -58,3 +58,4 @@ D:\Documents\source\Library\Library\obj\Debug\Library.csproj.CoreCompileInputs.c
 D:\Documents\source\Library\Library\obj\Debug\Library.csproj.CopyComplete
 D:\Documents\source\Library\Library\obj\Debug\Library.exe
 D:\Documents\source\Library\Library\obj\Debug\Library.pdb
+D:\Documents\source\Library\Library\bin\Debug\LibraryDal.dll.config

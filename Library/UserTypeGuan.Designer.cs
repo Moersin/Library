@@ -42,9 +42,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet2 = new Library.LibraryDataSet2();
-            this.userTypeTableAdapter = new Library.LibraryDataSet2TableAdapters.UserTypeTableAdapter();
             this.tbUserTypeAdd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -52,13 +49,16 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.uTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet2 = new Library.LibraryDataSet2();
+            this.userTypeTableAdapter = new Library.LibraryDataSet2TableAdapters.UserTypeTableAdapter();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -189,20 +189,6 @@
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
-            // userTypeBindingSource
-            // 
-            this.userTypeBindingSource.DataMember = "UserType";
-            this.userTypeBindingSource.DataSource = this.libraryDataSet2;
-            // 
-            // libraryDataSet2
-            // 
-            this.libraryDataSet2.DataSetName = "LibraryDataSet2";
-            this.libraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userTypeTableAdapter
-            // 
-            this.userTypeTableAdapter.ClearBeforeFill = true;
-            // 
             // tbUserTypeAdd
             // 
             this.tbUserTypeAdd.Location = new System.Drawing.Point(132, 31);
@@ -266,11 +252,25 @@
             this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
             this.userTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // userTypeBindingSource
+            // 
+            this.userTypeBindingSource.DataMember = "UserType";
+            this.userTypeBindingSource.DataSource = this.libraryDataSet2;
+            // 
+            // libraryDataSet2
+            // 
+            this.libraryDataSet2.DataSetName = "LibraryDataSet2";
+            this.libraryDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userTypeTableAdapter
+            // 
+            this.userTypeTableAdapter.ClearBeforeFill = true;
+            // 
             // UserTypeGuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 446);
+            this.ClientSize = new System.Drawing.Size(305, 457);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -286,10 +286,10 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }

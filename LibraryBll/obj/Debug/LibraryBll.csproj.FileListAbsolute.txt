@@ -20,3 +20,4 @@ D:\Documents\source\Library\LibraryBll\obj\Debug\LibraryBll.csproj.CoreCompileIn
 D:\Documents\source\Library\LibraryBll\obj\Debug\LibraryBll.csproj.CopyComplete
 D:\Documents\source\Library\LibraryBll\obj\Debug\LibraryBll.dll
 D:\Documents\source\Library\LibraryBll\obj\Debug\LibraryBll.pdb
+D:\Documents\source\Library\LibraryBll\bin\Debug\LibraryDal.dll.config

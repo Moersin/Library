@@ -140,6 +140,7 @@ namespace LibraryDal
             sb.AppendLine("select *");
             sb.AppendLine("from BookType");
             sb.AppendLine("where bookType like @bookType");
+            sb.AppendLine("order by bTypeId desc");
             //变量赋值,设置参数
             SqlParameter[] paras =
             {

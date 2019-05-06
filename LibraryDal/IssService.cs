@@ -21,7 +21,7 @@ namespace LibraryDal
             //sql语句
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("insert into Iss");
-            sb.AppendLine("values(@issBookId,@issBookName,@issUserId,@issBeginTime,@issEndTime)");
+            sb.AppendLine("values(@issBookId,@issBookName,@issUserId,@issBeginTime,@issEndTime,@issStatus)");
             //变量赋值,设置参数
             SqlParameter[] paras =
             {
@@ -30,7 +30,8 @@ namespace LibraryDal
                 new SqlParameter("@issBookName",iss.IssBookName),
                 new SqlParameter("@issUserId",iss.IssUserId),
                 new SqlParameter("@issBeginTime",iss.IssBeginTime),
-                new SqlParameter("@issEndTime",iss.IssEndTime)
+                new SqlParameter("@issEndTime",iss.IssEndTime),
+                new SqlParameter("@issStatus",iss.IssStatus)
             };
             //创建连接对象
             SqlConnection conn = new SqlConnection(connString);
@@ -67,6 +68,7 @@ namespace LibraryDal
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("select * from Iss");
             sb.AppendLine("where issUserId = @issUserId");
+            sb.AppendLine("order by issStatus");
             //参数
             SqlParameter[] paras =
             {
@@ -87,6 +89,7 @@ namespace LibraryDal
                 {
                     Iss iss = new Iss();
                     iss.IssId = Convert.ToInt32(reader["IssId"]);
+                    iss.IssStatus = Convert.ToString(reader["IssStatus"]);
                     iss.IssBookId = Convert.ToInt32(reader["IssBookId"]);
                     iss.IssBookName = Convert.ToString(reader["IssBookName"]);
                     iss.IssUserId = Convert.ToInt32(reader["IssUserId"]);
@@ -110,7 +113,7 @@ namespace LibraryDal
             //sql语句
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("update Iss");
-            sb.AppendLine("set issBookId=@issBookId,issBookName=@issBookName,issUserId=@issUserId,issBeginTime=@issBeginTime,issEndTime=@issEndTime");
+            sb.AppendLine("set issBookId=@issBookId,issBookName=@issBookName,issUserId=@issUserId,issBeginTime=@issBeginTime,issEndTime=@issEndTime,issStatus=@issStatus");
             sb.AppendLine("where issId=@issId");
             //变量赋值,设置参数
             SqlParameter[] paras =
@@ -120,6 +123,7 @@ namespace LibraryDal
                 new SqlParameter("@issUserId",iss.IssUserId),
                 new SqlParameter("@issBeginTime",iss.IssBeginTime),
                 new SqlParameter("@issEndTime",iss.IssEndTime),
+                new SqlParameter("@issStatus",iss.IssStatus),
                 new SqlParameter("@issId",iss.IssId)
             };
             //创建连接对象

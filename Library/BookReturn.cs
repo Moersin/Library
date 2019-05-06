@@ -48,10 +48,10 @@ namespace Library
             {
                 DataGridViewRow dgvr = this.dataGridView1.CurrentRow;
                 this.tbIssId.Text = dgvr.Cells[0].Value.ToString();
-                this.tbReturnBookId.Text = dgvr.Cells[1].Value.ToString();
-                this.tbReturnBookName.Text = dgvr.Cells[2].Value.ToString();
-                this.tbReturnUserId.Text = dgvr.Cells[3].Value.ToString();
-                this.dtpBeginTime.Text = dgvr.Cells[4].Value.ToString();
+                this.tbReturnBookId.Text = dgvr.Cells[2].Value.ToString();
+                this.tbReturnBookName.Text = dgvr.Cells[3].Value.ToString();
+                this.tbReturnUserId.Text = dgvr.Cells[4].Value.ToString();
+                this.dtpBeginTime.Text = dgvr.Cells[5].Value.ToString();
                 //this.dtpReturnEndTime.Text = dgvr.Cells[4].Value.ToString();
             }
         }
@@ -112,12 +112,14 @@ namespace Library
                 iss.IssUserId = Convert.ToInt32(this.tbReturnUserId.Text.Trim());
                 iss.IssBeginTime = Convert.ToDateTime(this.dtpBeginTime.Text.Trim());
                 iss.IssEndTime = Convert.ToDateTime(this.dtpReturnEndTime.Text.Trim());
+                iss.IssStatus = "已归还";
                 iss.IssId= Convert.ToInt32(this.tbIssId.Text.Trim());
 
                 int ret = new IssManager().UpdateIss(iss);
                 if (ret > 0)
                 {
                     MessageBox.Show(RETURNSUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    IssDataBind();
                 }
                 else
                 {
@@ -128,6 +130,19 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void FillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.issTableAdapter.FillBy(this.libraryDataSet.Iss);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

@@ -776,15 +776,13 @@ namespace Library.LibraryDataSet2TableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[UserType] ([userType]) VALUES (@userType);\r\nSELECT uTypeId, us" +
-                "erType FROM UserType WHERE (uTypeId = SCOPE_IDENTITY())";
+                "erType FROM UserType WHERE (uTypeId = SCOPE_IDENTITY()) ORDER BY uTypeId DESC";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[UserType] SET [userType] = @userType WHERE (([uTypeId] = @Original_" +
-                "uTypeId) AND ((@IsNull_userType = 1 AND [userType] IS NULL) OR ([userType] = @Or" +
-                "iginal_userType)));\r\nSELECT uTypeId, userType FROM UserType WHERE (uTypeId = @uT" +
-                "ypeId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[UserType] SET [userType] = @userType WHERE (([uTypeId] = @Original_uTypeId) AND ((@IsNull_userType = 1 AND [userType] IS NULL) OR ([userType] = @Original_userType)));
+SELECT uTypeId, userType FROM UserType WHERE (uTypeId = @uTypeId) ORDER BY uTypeId DESC";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@userType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "userType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_uTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "uTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -806,7 +804,7 @@ namespace Library.LibraryDataSet2TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT uTypeId, userType FROM dbo.UserType";
+            this._commandCollection[0].CommandText = "SELECT uTypeId, userType FROM dbo.UserType ORDER BY uTypeId DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

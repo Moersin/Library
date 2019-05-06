@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace Library {
+namespace LibraryDal {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace Library {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("LibraryDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("LibraryDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class LibraryDataSet1 : global::System.Data.DataSet {
+    public partial class LibraryDataSet : global::System.Data.DataSet {
         
-        private BookTypeDataTable tableBookType;
+        private IssDataTable tableIss;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public LibraryDataSet1() {
+        public LibraryDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace Library {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected LibraryDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected LibraryDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace Library {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["BookType"] != null)) {
-                    base.Tables.Add(new BookTypeDataTable(ds.Tables["BookType"]));
+                if ((ds.Tables["Iss"] != null)) {
+                    base.Tables.Add(new IssDataTable(ds.Tables["Iss"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace Library {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public BookTypeDataTable BookType {
+        public IssDataTable Iss {
             get {
-                return this.tableBookType;
+                return this.tableIss;
             }
         }
         
@@ -127,7 +127,7 @@ namespace Library {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            LibraryDataSet1 cln = ((LibraryDataSet1)(base.Clone()));
+            LibraryDataSet cln = ((LibraryDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace Library {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["BookType"] != null)) {
-                    base.Tables.Add(new BookTypeDataTable(ds.Tables["BookType"]));
+                if ((ds.Tables["Iss"] != null)) {
+                    base.Tables.Add(new IssDataTable(ds.Tables["Iss"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace Library {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableBookType = ((BookTypeDataTable)(base.Tables["BookType"]));
+            this.tableIss = ((IssDataTable)(base.Tables["Iss"]));
             if ((initTable == true)) {
-                if ((this.tableBookType != null)) {
-                    this.tableBookType.InitVars();
+                if ((this.tableIss != null)) {
+                    this.tableIss.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace Library {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "LibraryDataSet1";
+            this.DataSetName = "LibraryDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/LibraryDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/LibraryDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableBookType = new BookTypeDataTable();
-            base.Tables.Add(this.tableBookType);
+            this.tableIss = new IssDataTable();
+            base.Tables.Add(this.tableIss);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeBookType() {
+        private bool ShouldSerializeIss() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace Library {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            LibraryDataSet1 ds = new LibraryDataSet1();
+            LibraryDataSet ds = new LibraryDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,33 @@ namespace Library {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void BookTypeRowChangeEventHandler(object sender, BookTypeRowChangeEvent e);
+        public delegate void IssRowChangeEventHandler(object sender, IssRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class BookTypeDataTable : global::System.Data.TypedTableBase<BookTypeRow> {
+        public partial class IssDataTable : global::System.Data.TypedTableBase<IssRow> {
             
-            private global::System.Data.DataColumn columnbTypeId;
+            private global::System.Data.DataColumn columnissId;
             
-            private global::System.Data.DataColumn columnbookType;
+            private global::System.Data.DataColumn columnissBookId;
+            
+            private global::System.Data.DataColumn columnissBookName;
+            
+            private global::System.Data.DataColumn columnissUserId;
+            
+            private global::System.Data.DataColumn columnissBeginTime;
+            
+            private global::System.Data.DataColumn columnissEndTime;
+            
+            private global::System.Data.DataColumn columnissStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeDataTable() {
-                this.TableName = "BookType";
+            public IssDataTable() {
+                this.TableName = "Iss";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +304,7 @@ namespace Library {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal BookTypeDataTable(global::System.Data.DataTable table) {
+            internal IssDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +321,64 @@ namespace Library {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected BookTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected IssDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn bTypeIdColumn {
+            public global::System.Data.DataColumn issIdColumn {
                 get {
-                    return this.columnbTypeId;
+                    return this.columnissId;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn bookTypeColumn {
+            public global::System.Data.DataColumn issBookIdColumn {
                 get {
-                    return this.columnbookType;
+                    return this.columnissBookId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issBookNameColumn {
+                get {
+                    return this.columnissBookName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issUserIdColumn {
+                get {
+                    return this.columnissUserId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issBeginTimeColumn {
+                get {
+                    return this.columnissBeginTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issEndTimeColumn {
+                get {
+                    return this.columnissEndTime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn issStatusColumn {
+                get {
+                    return this.columnissStatus;
                 }
             }
             
@@ -343,53 +393,58 @@ namespace Library {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRow this[int index] {
+            public IssRow this[int index] {
                 get {
-                    return ((BookTypeRow)(this.Rows[index]));
+                    return ((IssRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event BookTypeRowChangeEventHandler BookTypeRowChanging;
+            public event IssRowChangeEventHandler IssRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event BookTypeRowChangeEventHandler BookTypeRowChanged;
+            public event IssRowChangeEventHandler IssRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event BookTypeRowChangeEventHandler BookTypeRowDeleting;
+            public event IssRowChangeEventHandler IssRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event BookTypeRowChangeEventHandler BookTypeRowDeleted;
+            public event IssRowChangeEventHandler IssRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddBookTypeRow(BookTypeRow row) {
+            public void AddIssRow(IssRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRow AddBookTypeRow(string bookType) {
-                BookTypeRow rowBookTypeRow = ((BookTypeRow)(this.NewRow()));
+            public IssRow AddIssRow(int issBookId, string issBookName, int issUserId, System.DateTime issBeginTime, System.DateTime issEndTime, string issStatus) {
+                IssRow rowIssRow = ((IssRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        bookType};
-                rowBookTypeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowBookTypeRow);
-                return rowBookTypeRow;
+                        issBookId,
+                        issBookName,
+                        issUserId,
+                        issBeginTime,
+                        issEndTime,
+                        issStatus};
+                rowIssRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowIssRow);
+                return rowIssRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRow FindBybTypeId(int bTypeId) {
-                return ((BookTypeRow)(this.Rows.Find(new object[] {
-                            bTypeId})));
+            public IssRow FindByissId(int issId) {
+                return ((IssRow)(this.Rows.Find(new object[] {
+                            issId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                BookTypeDataTable cln = ((BookTypeDataTable)(base.Clone()));
+                IssDataTable cln = ((IssDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -397,58 +452,74 @@ namespace Library {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new BookTypeDataTable();
+                return new IssDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnbTypeId = base.Columns["bTypeId"];
-                this.columnbookType = base.Columns["bookType"];
+                this.columnissId = base.Columns["issId"];
+                this.columnissBookId = base.Columns["issBookId"];
+                this.columnissBookName = base.Columns["issBookName"];
+                this.columnissUserId = base.Columns["issUserId"];
+                this.columnissBeginTime = base.Columns["issBeginTime"];
+                this.columnissEndTime = base.Columns["issEndTime"];
+                this.columnissStatus = base.Columns["issStatus"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnbTypeId = new global::System.Data.DataColumn("bTypeId", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbTypeId);
-                this.columnbookType = new global::System.Data.DataColumn("bookType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnbookType);
+                this.columnissId = new global::System.Data.DataColumn("issId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissId);
+                this.columnissBookId = new global::System.Data.DataColumn("issBookId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissBookId);
+                this.columnissBookName = new global::System.Data.DataColumn("issBookName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissBookName);
+                this.columnissUserId = new global::System.Data.DataColumn("issUserId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissUserId);
+                this.columnissBeginTime = new global::System.Data.DataColumn("issBeginTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissBeginTime);
+                this.columnissEndTime = new global::System.Data.DataColumn("issEndTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissEndTime);
+                this.columnissStatus = new global::System.Data.DataColumn("issStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnissStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnbTypeId}, true));
-                this.columnbTypeId.AutoIncrement = true;
-                this.columnbTypeId.AutoIncrementSeed = -1;
-                this.columnbTypeId.AutoIncrementStep = -1;
-                this.columnbTypeId.AllowDBNull = false;
-                this.columnbTypeId.ReadOnly = true;
-                this.columnbTypeId.Unique = true;
-                this.columnbookType.MaxLength = 50;
+                                this.columnissId}, true));
+                this.columnissId.AutoIncrement = true;
+                this.columnissId.AutoIncrementSeed = -1;
+                this.columnissId.AutoIncrementStep = -1;
+                this.columnissId.AllowDBNull = false;
+                this.columnissId.ReadOnly = true;
+                this.columnissId.Unique = true;
+                this.columnissBookName.MaxLength = 50;
+                this.columnissStatus.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRow NewBookTypeRow() {
-                return ((BookTypeRow)(this.NewRow()));
+            public IssRow NewIssRow() {
+                return ((IssRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new BookTypeRow(builder);
+                return new IssRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(BookTypeRow);
+                return typeof(IssRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.BookTypeRowChanged != null)) {
-                    this.BookTypeRowChanged(this, new BookTypeRowChangeEvent(((BookTypeRow)(e.Row)), e.Action));
+                if ((this.IssRowChanged != null)) {
+                    this.IssRowChanged(this, new IssRowChangeEvent(((IssRow)(e.Row)), e.Action));
                 }
             }
             
@@ -456,8 +527,8 @@ namespace Library {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.BookTypeRowChanging != null)) {
-                    this.BookTypeRowChanging(this, new BookTypeRowChangeEvent(((BookTypeRow)(e.Row)), e.Action));
+                if ((this.IssRowChanging != null)) {
+                    this.IssRowChanging(this, new IssRowChangeEvent(((IssRow)(e.Row)), e.Action));
                 }
             }
             
@@ -465,8 +536,8 @@ namespace Library {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.BookTypeRowDeleted != null)) {
-                    this.BookTypeRowDeleted(this, new BookTypeRowChangeEvent(((BookTypeRow)(e.Row)), e.Action));
+                if ((this.IssRowDeleted != null)) {
+                    this.IssRowDeleted(this, new IssRowChangeEvent(((IssRow)(e.Row)), e.Action));
                 }
             }
             
@@ -474,14 +545,14 @@ namespace Library {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.BookTypeRowDeleting != null)) {
-                    this.BookTypeRowDeleting(this, new BookTypeRowChangeEvent(((BookTypeRow)(e.Row)), e.Action));
+                if ((this.IssRowDeleting != null)) {
+                    this.IssRowDeleting(this, new IssRowChangeEvent(((IssRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveBookTypeRow(BookTypeRow row) {
+            public void RemoveIssRow(IssRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -490,7 +561,7 @@ namespace Library {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LibraryDataSet1 ds = new LibraryDataSet1();
+                LibraryDataSet ds = new LibraryDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -508,7 +579,7 @@ namespace Library {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "BookTypeDataTable";
+                attribute2.FixedValue = "IssDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -552,54 +623,194 @@ namespace Library {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class BookTypeRow : global::System.Data.DataRow {
+        public partial class IssRow : global::System.Data.DataRow {
             
-            private BookTypeDataTable tableBookType;
+            private IssDataTable tableIss;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal BookTypeRow(global::System.Data.DataRowBuilder rb) : 
+            internal IssRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableBookType = ((BookTypeDataTable)(this.Table));
+                this.tableIss = ((IssDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int bTypeId {
+            public int issId {
                 get {
-                    return ((int)(this[this.tableBookType.bTypeIdColumn]));
+                    return ((int)(this[this.tableIss.issIdColumn]));
                 }
                 set {
-                    this[this.tableBookType.bTypeIdColumn] = value;
+                    this[this.tableIss.issIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string bookType {
+            public int issBookId {
                 get {
                     try {
-                        return ((string)(this[this.tableBookType.bookTypeColumn]));
+                        return ((int)(this[this.tableIss.issBookIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("表“BookType”中列“bookType”的值为 DBNull。", e);
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issBookId”的值为 DBNull。", e);
                     }
                 }
                 set {
-                    this[this.tableBookType.bookTypeColumn] = value;
+                    this[this.tableIss.issBookIdColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsbookTypeNull() {
-                return this.IsNull(this.tableBookType.bookTypeColumn);
+            public string issBookName {
+                get {
+                    try {
+                        return ((string)(this[this.tableIss.issBookNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issBookName”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableIss.issBookNameColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetbookTypeNull() {
-                this[this.tableBookType.bookTypeColumn] = global::System.Convert.DBNull;
+            public int issUserId {
+                get {
+                    try {
+                        return ((int)(this[this.tableIss.issUserIdColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issUserId”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableIss.issUserIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime issBeginTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIss.issBeginTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issBeginTime”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableIss.issBeginTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime issEndTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableIss.issEndTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issEndTime”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableIss.issEndTimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string issStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableIss.issStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("表“Iss”中列“issStatus”的值为 DBNull。", e);
+                    }
+                }
+                set {
+                    this[this.tableIss.issStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissBookIdNull() {
+                return this.IsNull(this.tableIss.issBookIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissBookIdNull() {
+                this[this.tableIss.issBookIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissBookNameNull() {
+                return this.IsNull(this.tableIss.issBookNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissBookNameNull() {
+                this[this.tableIss.issBookNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissUserIdNull() {
+                return this.IsNull(this.tableIss.issUserIdColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissUserIdNull() {
+                this[this.tableIss.issUserIdColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissBeginTimeNull() {
+                return this.IsNull(this.tableIss.issBeginTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissBeginTimeNull() {
+                this[this.tableIss.issBeginTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissEndTimeNull() {
+                return this.IsNull(this.tableIss.issEndTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissEndTimeNull() {
+                this[this.tableIss.issEndTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsissStatusNull() {
+                return this.IsNull(this.tableIss.issStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetissStatusNull() {
+                this[this.tableIss.issStatusColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -607,22 +818,22 @@ namespace Library {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class BookTypeRowChangeEvent : global::System.EventArgs {
+        public class IssRowChangeEvent : global::System.EventArgs {
             
-            private BookTypeRow eventRow;
+            private IssRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRowChangeEvent(BookTypeRow row, global::System.Data.DataRowAction action) {
+            public IssRowChangeEvent(IssRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public BookTypeRow Row {
+            public IssRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -638,7 +849,7 @@ namespace Library {
         }
     }
 }
-namespace Library.LibraryDataSet1TableAdapters {
+namespace LibraryDal.LibraryDataSetTableAdapters {
     
     
     /// <summary>
@@ -650,7 +861,7 @@ namespace Library.LibraryDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class BookTypeTableAdapter : global::System.ComponentModel.Component {
+    public partial class IssTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -664,7 +875,7 @@ namespace Library.LibraryDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public BookTypeTableAdapter() {
+        public IssTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -761,41 +972,75 @@ namespace Library.LibraryDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "BookType";
-            tableMapping.ColumnMappings.Add("bTypeId", "bTypeId");
-            tableMapping.ColumnMappings.Add("bookType", "bookType");
+            tableMapping.DataSetTable = "Iss";
+            tableMapping.ColumnMappings.Add("issId", "issId");
+            tableMapping.ColumnMappings.Add("issBookId", "issBookId");
+            tableMapping.ColumnMappings.Add("issBookName", "issBookName");
+            tableMapping.ColumnMappings.Add("issUserId", "issUserId");
+            tableMapping.ColumnMappings.Add("issBeginTime", "issBeginTime");
+            tableMapping.ColumnMappings.Add("issEndTime", "issEndTime");
+            tableMapping.ColumnMappings.Add("issStatus", "issStatus");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[BookType] WHERE (([bTypeId] = @Original_bTypeId) AND ((@IsNull" +
-                "_bookType = 1 AND [bookType] IS NULL) OR ([bookType] = @Original_bookType)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Iss] WHERE (([issId] = @Original_issId) AND ((@IsNull_issBookId = 1 AND [issBookId] IS NULL) OR ([issBookId] = @Original_issBookId)) AND ((@IsNull_issBookName = 1 AND [issBookName] IS NULL) OR ([issBookName] = @Original_issBookName)) AND ((@IsNull_issUserId = 1 AND [issUserId] IS NULL) OR ([issUserId] = @Original_issUserId)) AND ((@IsNull_issBeginTime = 1 AND [issBeginTime] IS NULL) OR ([issBeginTime] = @Original_issBeginTime)) AND ((@IsNull_issEndTime = 1 AND [issEndTime] IS NULL) OR ([issEndTime] = @Original_issEndTime)) AND ((@IsNull_issStatus = 1 AND [issStatus] IS NULL) OR ([issStatus] = @Original_issStatus)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bookType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bookType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBookName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBeginTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBeginTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issEndTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issEndTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[BookType] ([bookType]) VALUES (@bookType);\r\nSELECT bTypeId, bo" +
-                "okType FROM BookType WHERE (bTypeId = SCOPE_IDENTITY()) ORDER BY bTypeId DESC";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Iss] ([issBookId], [issBookName], [issUserId], [issBeginTime], [issEndTime], [issStatus]) VALUES (@issBookId, @issBookName, @issUserId, @issBeginTime, @issEndTime, @issStatus);
+SELECT issId, issBookId, issBookName, issUserId, issBeginTime, issEndTime, issStatus FROM Iss WHERE (issId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBeginTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issEndTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[BookType] SET [bookType] = @bookType WHERE (([bTypeId] = @Original_bTypeId) AND ((@IsNull_bookType = 1 AND [bookType] IS NULL) OR ([bookType] = @Original_bookType)));
-SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bTypeId DESC";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Iss] SET [issBookId] = @issBookId, [issBookName] = @issBookName, [issUserId] = @issUserId, [issBeginTime] = @issBeginTime, [issEndTime] = @issEndTime, [issStatus] = @issStatus WHERE (([issId] = @Original_issId) AND ((@IsNull_issBookId = 1 AND [issBookId] IS NULL) OR ([issBookId] = @Original_issBookId)) AND ((@IsNull_issBookName = 1 AND [issBookName] IS NULL) OR ([issBookName] = @Original_issBookName)) AND ((@IsNull_issUserId = 1 AND [issUserId] IS NULL) OR ([issUserId] = @Original_issUserId)) AND ((@IsNull_issBeginTime = 1 AND [issBeginTime] IS NULL) OR ([issBeginTime] = @Original_issBeginTime)) AND ((@IsNull_issEndTime = 1 AND [issEndTime] IS NULL) OR ([issEndTime] = @Original_issEndTime)) AND ((@IsNull_issStatus = 1 AND [issStatus] IS NULL) OR ([issStatus] = @Original_issStatus)));
+SELECT issId, issBookId, issBookName, issUserId, issBeginTime, issEndTime, issStatus FROM Iss WHERE (issId = @issId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bookType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bTypeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bTypeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bookType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bookType", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bookType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bTypeId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "bTypeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issBeginTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issEndTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBookId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBookName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBookName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBookName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issUserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issUserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issBeginTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issBeginTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issBeginTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issEndTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issEndTime", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issEndTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_issStatus", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_issStatus", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "issStatus", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@issId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "issId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Library.Properties.Settings.Default.LibraryConnectionString;
+            this._connection.ConnectionString = global::LibraryDal.Properties.Settings.Default.LibraryConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -804,7 +1049,8 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT bTypeId, bookType FROM dbo.BookType order by bTypeId desc";
+            this._commandCollection[0].CommandText = "SELECT issId, issBookId, issBookName, issUserId, issBeginTime, issEndTime, issSta" +
+                "tus FROM dbo.Iss";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -812,7 +1058,7 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LibraryDataSet1.BookTypeDataTable dataTable) {
+        public virtual int Fill(LibraryDataSet.IssDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -825,9 +1071,9 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LibraryDataSet1.BookTypeDataTable GetData() {
+        public virtual LibraryDataSet.IssDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LibraryDataSet1.BookTypeDataTable dataTable = new LibraryDataSet1.BookTypeDataTable();
+            LibraryDataSet.IssDataTable dataTable = new LibraryDataSet.IssDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -835,15 +1081,15 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LibraryDataSet1.BookTypeDataTable dataTable) {
+        public virtual int Update(LibraryDataSet.IssDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LibraryDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "BookType");
+        public virtual int Update(LibraryDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "Iss");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -865,15 +1111,55 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_bTypeId, string Original_bookType) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_bTypeId));
-            if ((Original_bookType == null)) {
+        public virtual int Delete(int Original_issId, global::System.Nullable<int> Original_issBookId, string Original_issBookName, global::System.Nullable<int> Original_issUserId, global::System.Nullable<global::System.DateTime> Original_issBeginTime, global::System.Nullable<global::System.DateTime> Original_issEndTime, string Original_issStatus) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_issId));
+            if ((Original_issBookId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_issBookId.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
+            if ((Original_issBookName == null)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_bookType));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_issBookName));
+            }
+            if ((Original_issUserId.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_issUserId.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issBeginTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_issBeginTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issEndTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_issEndTime.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issStatus == null)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_issStatus));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -895,12 +1181,42 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string bookType) {
-            if ((bookType == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+        public virtual int Insert(global::System.Nullable<int> issBookId, string issBookName, global::System.Nullable<int> issUserId, global::System.Nullable<global::System.DateTime> issBeginTime, global::System.Nullable<global::System.DateTime> issEndTime, string issStatus) {
+            if ((issBookId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(issBookId.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(bookType));
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((issBookName == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(issBookName));
+            }
+            if ((issUserId.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(issUserId.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((issBeginTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(issBeginTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((issEndTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(issEndTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((issStatus == null)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(issStatus));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -922,23 +1238,93 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bookType, int Original_bTypeId, string Original_bookType, int bTypeId) {
-            if ((bookType == null)) {
+        public virtual int Update(global::System.Nullable<int> issBookId, string issBookName, global::System.Nullable<int> issUserId, global::System.Nullable<global::System.DateTime> issBeginTime, global::System.Nullable<global::System.DateTime> issEndTime, string issStatus, int Original_issId, global::System.Nullable<int> Original_issBookId, string Original_issBookName, global::System.Nullable<int> Original_issUserId, global::System.Nullable<global::System.DateTime> Original_issBeginTime, global::System.Nullable<global::System.DateTime> Original_issEndTime, string Original_issStatus, int issId) {
+            if ((issBookId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(issBookId.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(bookType));
+            if ((issBookName == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_bTypeId));
-            if ((Original_bookType == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(issBookName));
+            }
+            if ((issUserId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(issUserId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((issBeginTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(issBeginTime.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_bookType));
+            if ((issEndTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(issEndTime.Value));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(bTypeId));
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((issStatus == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(issStatus));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_issId));
+            if ((Original_issBookId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_issBookId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issBookName == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_issBookName));
+            }
+            if ((Original_issUserId.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_issUserId.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issBeginTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_issBeginTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issEndTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_issEndTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((Original_issStatus == null)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_issStatus));
+            }
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(issId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -959,8 +1345,8 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string bookType, int Original_bTypeId, string Original_bookType) {
-            return this.Update(bookType, Original_bTypeId, Original_bookType, Original_bTypeId);
+        public virtual int Update(global::System.Nullable<int> issBookId, string issBookName, global::System.Nullable<int> issUserId, global::System.Nullable<global::System.DateTime> issBeginTime, global::System.Nullable<global::System.DateTime> issEndTime, string issStatus, int Original_issId, global::System.Nullable<int> Original_issBookId, string Original_issBookName, global::System.Nullable<int> Original_issUserId, global::System.Nullable<global::System.DateTime> Original_issBeginTime, global::System.Nullable<global::System.DateTime> Original_issEndTime, string Original_issStatus) {
+            return this.Update(issBookId, issBookName, issUserId, issBeginTime, issEndTime, issStatus, Original_issId, Original_issBookId, Original_issBookName, Original_issUserId, Original_issBeginTime, Original_issEndTime, Original_issStatus, Original_issId);
         }
     }
     
@@ -976,7 +1362,7 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         
         private UpdateOrderOption _updateOrder;
         
-        private BookTypeTableAdapter _bookTypeTableAdapter;
+        private IssTableAdapter _issTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -998,12 +1384,12 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public BookTypeTableAdapter BookTypeTableAdapter {
+        public IssTableAdapter IssTableAdapter {
             get {
-                return this._bookTypeTableAdapter;
+                return this._issTableAdapter;
             }
             set {
-                this._bookTypeTableAdapter = value;
+                this._issTableAdapter = value;
             }
         }
         
@@ -1026,9 +1412,9 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._bookTypeTableAdapter != null) 
-                            && (this._bookTypeTableAdapter.Connection != null))) {
-                    return this._bookTypeTableAdapter.Connection;
+                if (((this._issTableAdapter != null) 
+                            && (this._issTableAdapter.Connection != null))) {
+                    return this._issTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1043,7 +1429,7 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._bookTypeTableAdapter != null)) {
+                if ((this._issTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1055,14 +1441,14 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(LibraryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(LibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bookTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.BookType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._issTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Iss.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._bookTypeTableAdapter.Update(updatedRows));
+                    result = (result + this._issTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1074,13 +1460,13 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(LibraryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(LibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._bookTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.BookType.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._issTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Iss.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._bookTypeTableAdapter.Update(addedRows));
+                    result = (result + this._issTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1092,13 +1478,13 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(LibraryDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(LibraryDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._bookTypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.BookType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._issTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Iss.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._bookTypeTableAdapter.Update(deletedRows));
+                    result = (result + this._issTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1134,15 +1520,15 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(LibraryDataSet1 dataSet) {
+        public virtual int UpdateAll(LibraryDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._bookTypeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._bookTypeTableAdapter.Connection) == false))) {
+            if (((this._issTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._issTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("由 TableAdapterManager 管理的所有 TableAdapter 必须使用相同的连接字符串。");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
@@ -1176,13 +1562,13 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._bookTypeTableAdapter != null)) {
-                    revertConnections.Add(this._bookTypeTableAdapter, this._bookTypeTableAdapter.Connection);
-                    this._bookTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._bookTypeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._bookTypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._bookTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._bookTypeTableAdapter.Adapter);
+                if ((this._issTableAdapter != null)) {
+                    revertConnections.Add(this._issTableAdapter, this._issTableAdapter.Connection);
+                    this._issTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._issTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._issTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._issTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._issTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1243,9 +1629,9 @@ SELECT bTypeId, bookType FROM BookType WHERE (bTypeId = @bTypeId) ORDER BY bType
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._bookTypeTableAdapter != null)) {
-                    this._bookTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._bookTypeTableAdapter]));
-                    this._bookTypeTableAdapter.Transaction = null;
+                if ((this._issTableAdapter != null)) {
+                    this._issTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._issTableAdapter]));
+                    this._issTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

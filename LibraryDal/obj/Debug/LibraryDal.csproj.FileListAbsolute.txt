@@ -16,3 +16,4 @@ D:\Documents\source\Library\LibraryDal\obj\Debug\LibraryDal.csproj.CoreCompileIn
 D:\Documents\source\Library\LibraryDal\obj\Debug\LibraryDal.csproj.CopyComplete
 D:\Documents\source\Library\LibraryDal\obj\Debug\LibraryDal.dll
 D:\Documents\source\Library\LibraryDal\obj\Debug\LibraryDal.pdb
+D:\Documents\source\Library\LibraryDal\bin\Debug\LibraryDal.dll.config

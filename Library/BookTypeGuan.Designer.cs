@@ -35,30 +35,30 @@
             this.tbBookTypeQuery = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bookTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bookTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet1 = new Library.LibraryDataSet1();
-            this.bookTypeTableAdapter = new Library.LibraryDataSet1TableAdapters.BookTypeTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tbBookTypeId = new System.Windows.Forms.TextBox();
             this.tbBookTypeUpdate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbBookTypeAdd = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.bookTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bookTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet1 = new Library.LibraryDataSet1();
+            this.bookTypeTableAdapter = new Library.LibraryDataSet1TableAdapters.BookTypeTableAdapter();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,13 +125,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
-            // bookTypeDataGridViewTextBoxColumn
-            // 
-            this.bookTypeDataGridViewTextBoxColumn.DataPropertyName = "bookType";
-            this.bookTypeDataGridViewTextBoxColumn.HeaderText = "书籍类别";
-            this.bookTypeDataGridViewTextBoxColumn.Name = "bookTypeDataGridViewTextBoxColumn";
-            this.bookTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -146,20 +139,6 @@
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
-            // bookTypeBindingSource
-            // 
-            this.bookTypeBindingSource.DataMember = "BookType";
-            this.bookTypeBindingSource.DataSource = this.libraryDataSet1;
-            // 
-            // libraryDataSet1
-            // 
-            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
-            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bookTypeTableAdapter
-            // 
-            this.bookTypeTableAdapter.ClearBeforeFill = true;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnUpdate);
@@ -173,16 +152,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "修改";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(133, 68);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "返回";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
             // 
             // btnUpdate
             // 
@@ -227,6 +196,16 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "类别";
             // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(133, 68);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "返回";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnReturn);
@@ -266,6 +245,27 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "图书类别";
             // 
+            // bookTypeDataGridViewTextBoxColumn
+            // 
+            this.bookTypeDataGridViewTextBoxColumn.DataPropertyName = "bookType";
+            this.bookTypeDataGridViewTextBoxColumn.HeaderText = "书籍类别";
+            this.bookTypeDataGridViewTextBoxColumn.Name = "bookTypeDataGridViewTextBoxColumn";
+            this.bookTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bookTypeBindingSource
+            // 
+            this.bookTypeBindingSource.DataMember = "BookType";
+            this.bookTypeBindingSource.DataSource = this.libraryDataSet1;
+            // 
+            // libraryDataSet1
+            // 
+            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
+            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookTypeTableAdapter
+            // 
+            this.bookTypeTableAdapter.ClearBeforeFill = true;
+            // 
             // BookTypeGuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -284,12 +284,12 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }

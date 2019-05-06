@@ -130,8 +130,8 @@ namespace LibraryDal
         }
         #endregion
 
-        #region 根据书籍类别获取读者类别
-        //根据书籍类别获取读者类别
+        #region 根据用户类别获取读者类别
+        //根据用户类别获取读者类别
         public List<uType> GetuType(string userType)
         {
             List<uType> utype = new List<uType>();
@@ -140,6 +140,7 @@ namespace LibraryDal
             sb.AppendLine("select *");
             sb.AppendLine("from UserType");
             sb.AppendLine("where userType like @userType");
+            sb.AppendLine("order by uTypeId desc");
             //变量赋值,设置参数
             SqlParameter[] paras =
             {

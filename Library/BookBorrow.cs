@@ -142,6 +142,7 @@ namespace Library
                 //iss.IssUserId = Convert.ToInt32(formLogin.GetLoginId);
                 iss.IssUserId = Convert.ToInt32(this.tbBorrowSId.Text.Trim());
                 iss.IssBeginTime = Convert.ToDateTime(this.timeBorrow.Text.Trim());
+                iss.IssStatus = "未归还";
 
                 int ret = new IssManager().AddIss(iss);
                 if (ret > 0)

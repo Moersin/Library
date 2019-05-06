@@ -201,5 +201,18 @@ namespace Library
         {
             this.Close();
         }
+
+        private void FillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.userTypeTableAdapter.FillBy(this.libraryDataSet2.UserType);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

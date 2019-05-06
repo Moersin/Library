@@ -35,13 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.issId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issBookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issBookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issUserIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issBeginTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.issEndTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.issBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet = new Library.LibraryDataSet();
+            this.issBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btReturn = new System.Windows.Forms.Button();
             this.btnQuery = new System.Windows.Forms.Button();
@@ -63,13 +60,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.issBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.issTableAdapter = new Library.LibraryDataSetTableAdapters.IssTableAdapter();
+            this.libraryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.issEndTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issBeginTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issUserIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issBookNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.issBookIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.issBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issBindingSource2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.issBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -118,6 +123,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.issId,
+            this.issStatus,
             this.issBookIdDataGridViewTextBoxColumn,
             this.issBookNameDataGridViewTextBoxColumn,
             this.issUserIdDataGridViewTextBoxColumn,
@@ -139,40 +145,12 @@
             this.issId.Name = "issId";
             this.issId.ReadOnly = true;
             // 
-            // issBookIdDataGridViewTextBoxColumn
+            // issStatus
             // 
-            this.issBookIdDataGridViewTextBoxColumn.DataPropertyName = "issBookId";
-            this.issBookIdDataGridViewTextBoxColumn.HeaderText = "书籍编号";
-            this.issBookIdDataGridViewTextBoxColumn.Name = "issBookIdDataGridViewTextBoxColumn";
-            this.issBookIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // issBookNameDataGridViewTextBoxColumn
-            // 
-            this.issBookNameDataGridViewTextBoxColumn.DataPropertyName = "issBookName";
-            this.issBookNameDataGridViewTextBoxColumn.HeaderText = "书名";
-            this.issBookNameDataGridViewTextBoxColumn.Name = "issBookNameDataGridViewTextBoxColumn";
-            this.issBookNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // issUserIdDataGridViewTextBoxColumn
-            // 
-            this.issUserIdDataGridViewTextBoxColumn.DataPropertyName = "issUserId";
-            this.issUserIdDataGridViewTextBoxColumn.HeaderText = "读者账号";
-            this.issUserIdDataGridViewTextBoxColumn.Name = "issUserIdDataGridViewTextBoxColumn";
-            this.issUserIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // issBeginTimeDataGridViewTextBoxColumn
-            // 
-            this.issBeginTimeDataGridViewTextBoxColumn.DataPropertyName = "issBeginTime";
-            this.issBeginTimeDataGridViewTextBoxColumn.HeaderText = "借阅时间";
-            this.issBeginTimeDataGridViewTextBoxColumn.Name = "issBeginTimeDataGridViewTextBoxColumn";
-            this.issBeginTimeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // issEndTimeDataGridViewTextBoxColumn
-            // 
-            this.issEndTimeDataGridViewTextBoxColumn.DataPropertyName = "issEndTime";
-            this.issEndTimeDataGridViewTextBoxColumn.HeaderText = "归还时间";
-            this.issEndTimeDataGridViewTextBoxColumn.Name = "issEndTimeDataGridViewTextBoxColumn";
-            this.issEndTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.issStatus.DataPropertyName = "issStatus";
+            this.issStatus.HeaderText = "借阅状态";
+            this.issStatus.Name = "issStatus";
+            this.issStatus.ReadOnly = true;
             // 
             // issBindingSource1
             // 
@@ -380,11 +358,51 @@
             // 
             this.issTableAdapter.ClearBeforeFill = true;
             // 
+            // libraryDataSetBindingSource
+            // 
+            this.libraryDataSetBindingSource.DataSource = this.libraryDataSet;
+            this.libraryDataSetBindingSource.Position = 0;
+            // 
+            // issEndTimeDataGridViewTextBoxColumn
+            // 
+            this.issEndTimeDataGridViewTextBoxColumn.DataPropertyName = "issEndTime";
+            this.issEndTimeDataGridViewTextBoxColumn.HeaderText = "归还时间";
+            this.issEndTimeDataGridViewTextBoxColumn.Name = "issEndTimeDataGridViewTextBoxColumn";
+            this.issEndTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // issBeginTimeDataGridViewTextBoxColumn
+            // 
+            this.issBeginTimeDataGridViewTextBoxColumn.DataPropertyName = "issBeginTime";
+            this.issBeginTimeDataGridViewTextBoxColumn.HeaderText = "借阅时间";
+            this.issBeginTimeDataGridViewTextBoxColumn.Name = "issBeginTimeDataGridViewTextBoxColumn";
+            this.issBeginTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // issUserIdDataGridViewTextBoxColumn
+            // 
+            this.issUserIdDataGridViewTextBoxColumn.DataPropertyName = "issUserId";
+            this.issUserIdDataGridViewTextBoxColumn.HeaderText = "读者账号";
+            this.issUserIdDataGridViewTextBoxColumn.Name = "issUserIdDataGridViewTextBoxColumn";
+            this.issUserIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // issBookNameDataGridViewTextBoxColumn
+            // 
+            this.issBookNameDataGridViewTextBoxColumn.DataPropertyName = "issBookName";
+            this.issBookNameDataGridViewTextBoxColumn.HeaderText = "书名";
+            this.issBookNameDataGridViewTextBoxColumn.Name = "issBookNameDataGridViewTextBoxColumn";
+            this.issBookNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // issBookIdDataGridViewTextBoxColumn
+            // 
+            this.issBookIdDataGridViewTextBoxColumn.DataPropertyName = "issBookId";
+            this.issBookIdDataGridViewTextBoxColumn.HeaderText = "书籍编号";
+            this.issBookIdDataGridViewTextBoxColumn.Name = "issBookIdDataGridViewTextBoxColumn";
+            this.issBookIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // BookReturn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 374);
+            this.ClientSize = new System.Drawing.Size(675, 382);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -399,11 +417,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.issBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.issBindingSource2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.issBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -435,13 +455,16 @@
         private System.Windows.Forms.TextBox tbReturnBookId;
         private System.Windows.Forms.DateTimePicker dtpReturnEndTime;
         private System.Windows.Forms.DateTimePicker dtpBeginTime;
+        private System.Windows.Forms.TextBox tbIssId;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.BindingSource issBindingSource2;
         private System.Windows.Forms.DataGridViewTextBoxColumn issId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn issStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn issBookIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn issBookNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn issUserIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn issBeginTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn issEndTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.TextBox tbIssId;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.BindingSource libraryDataSetBindingSource;
     }
 }
