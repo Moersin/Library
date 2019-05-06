@@ -111,7 +111,7 @@ namespace Library
                 iss.IssBookName = this.tbReturnBookName.Text.Trim();
                 iss.IssUserId = Convert.ToInt32(this.tbReturnUserId.Text.Trim());
                 iss.IssBeginTime = Convert.ToDateTime(this.dtpBeginTime.Text.Trim());
-                iss.IssEndTime = this.dtpReturnEndTime.Text.Trim();
+                iss.IssEndTime = Convert.ToString(this.dtpReturnEndTime.Text.Trim());
                 iss.IssStatus = "已归还";
                 iss.IssId= Convert.ToInt32(this.tbIssId.Text.Trim());
 

@@ -69,7 +69,7 @@ namespace LibraryDal
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("select * from Iss");
             sb.AppendLine("where issUserId = @issUserId");
-            sb.AppendLine("order by issStatus");
+            sb.AppendLine("order by issStatus,issEndTime desc");
             //参数
             SqlParameter[] paras =
             {
