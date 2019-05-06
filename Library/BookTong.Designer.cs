@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNumByType = new System.Windows.Forms.Button();
             this.tbNumBytype = new System.Windows.Forms.TextBox();
@@ -58,11 +55,10 @@
             this.booksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet = new Library.LibraryDataSet();
             this.booksTableAdapter = new Library.LibraryDataSetTableAdapters.BooksTableAdapter();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.bookNumBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet3 = new Library.LibraryDataSet3();
             this.booksBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.libraryDataSet3 = new Library.LibraryDataSet3();
-            this.bookNumBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bookNumTableAdapter = new Library.LibraryDataSet3TableAdapters.bookNumTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).BeginInit();
@@ -71,11 +67,10 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookNumBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookNumBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -304,25 +299,15 @@
             // 
             this.booksTableAdapter.ClearBeforeFill = true;
             // 
-            // chart1
+            // bookNumBindingSource
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            this.chart1.DataSource = this.bookNumBindingSource;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(363, 19);
-            this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "书/类别";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.XValueMember = "bookType";
-            series1.YValueMembers = "num";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(443, 300);
-            this.chart1.TabIndex = 4;
-            this.chart1.Text = "chart1";
+            this.bookNumBindingSource.DataMember = "bookNum";
+            this.bookNumBindingSource.DataSource = this.libraryDataSet3;
+            // 
+            // libraryDataSet3
+            // 
+            this.libraryDataSet3.DataSetName = "LibraryDataSet3";
+            this.libraryDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // booksBindingSource1
             // 
@@ -334,16 +319,6 @@
             this.libraryDataSetBindingSource.DataSource = this.libraryDataSet;
             this.libraryDataSetBindingSource.Position = 0;
             // 
-            // libraryDataSet3
-            // 
-            this.libraryDataSet3.DataSetName = "LibraryDataSet3";
-            this.libraryDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bookNumBindingSource
-            // 
-            this.bookNumBindingSource.DataMember = "bookNum";
-            this.bookNumBindingSource.DataSource = this.libraryDataSet3;
-            // 
             // bookNumTableAdapter
             // 
             this.bookNumTableAdapter.ClearBeforeFill = true;
@@ -352,8 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 331);
-            this.Controls.Add(this.chart1);
+            this.ClientSize = new System.Drawing.Size(356, 331);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -372,11 +346,10 @@
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bookNumBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookNumBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,7 +382,6 @@
         private LibraryDataSet libraryDataSet;
         private System.Windows.Forms.BindingSource booksBindingSource;
         private LibraryDataSetTableAdapters.BooksTableAdapter booksTableAdapter;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.BindingSource libraryDataSetBindingSource;
         private System.Windows.Forms.BindingSource booksBindingSource1;
         private LibraryDataSet3 libraryDataSet3;
