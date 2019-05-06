@@ -18,7 +18,7 @@ namespace Library
         public const string INPUTWARN = "输入提示";
         public const string INPUTUSERTYPE = "请选择书籍类别";
         public const string QUERYSUCCEED = "查询成功";
-        public const string QUERYFAILED = "此类书没有被借阅";
+        public const string QUERYFAILED = "此类别下没有书籍";
         public const string QUERYFAILEDTIME = "此时间段内不存在借阅记录";
         public const string OPERATIONWARN = "操作提示";
         public const string OPERATIONFAILSED = "操作失败";

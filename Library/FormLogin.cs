@@ -63,7 +63,7 @@ namespace Library
                     indexFormStu indexFormStu = new indexFormStu();
                     indexFormStu.Show();
                     this.Hide();
-
+                    //获取登陆人id
                     Students.value= this.textFormId.Text.Trim();
                 }
                 else
