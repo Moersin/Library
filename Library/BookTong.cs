@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibraryBll;
 using LibraryModels;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Library
 {
@@ -36,6 +37,8 @@ namespace Library
 
         private void BookTong_Load(object sender, EventArgs e)
         {
+            // TODO: 这行代码将数据加载到表“libraryDataSet3.bookNum”中。您可以根据需要移动或删除它。
+            this.bookNumTableAdapter.Fill(this.libraryDataSet3.bookNum);
             // TODO: 这行代码将数据加载到表“libraryDataSet.Books”中。您可以根据需要移动或删除它。
             this.booksTableAdapter.Fill(this.libraryDataSet.Books);
             // TODO: 这行代码将数据加载到表“libraryDataSet1.BookType”中。您可以根据需要移动或删除它。
@@ -101,6 +104,11 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

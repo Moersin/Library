@@ -38,10 +38,8 @@
             this.toolStripButtonStuGuan = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBookAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBookGuan = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonBookTypeAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonBookCount = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnBookTypeG = new System.Windows.Forms.ToolStripButton();
-            this.toolStripBtnStuTypeAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripBtnStuTypeG = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolHelp = new System.Windows.Forms.ToolStripMenuItem();
@@ -73,10 +71,8 @@
             this.toolStripButtonStuGuan,
             this.toolStripButtonBookAdd,
             this.toolStripButtonBookGuan,
-            this.toolStripButtonBookTypeAdd,
             this.toolStripButtonBookCount,
             this.toolStripBtnBookTypeG,
-            this.toolStripBtnStuTypeAdd,
             this.toolStripBtnStuTypeG});
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
@@ -123,16 +119,6 @@
             this.toolStripButtonBookGuan.Text = "书籍管理";
             this.toolStripButtonBookGuan.Click += new System.EventHandler(this.ToolStripButtonBookGuan_Click);
             // 
-            // toolStripButtonBookTypeAdd
-            // 
-            this.toolStripButtonBookTypeAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonBookTypeAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonBookTypeAdd.Image")));
-            this.toolStripButtonBookTypeAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonBookTypeAdd.Name = "toolStripButtonBookTypeAdd";
-            this.toolStripButtonBookTypeAdd.Size = new System.Drawing.Size(84, 22);
-            this.toolStripButtonBookTypeAdd.Text = "图书类别添加";
-            this.toolStripButtonBookTypeAdd.Click += new System.EventHandler(this.ToolStripButtonBookTypeAdd_Click);
-            // 
             // toolStripButtonBookCount
             // 
             this.toolStripButtonBookCount.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -152,16 +138,6 @@
             this.toolStripBtnBookTypeG.Size = new System.Drawing.Size(84, 22);
             this.toolStripBtnBookTypeG.Text = "图书类别管理";
             this.toolStripBtnBookTypeG.Click += new System.EventHandler(this.ToolStripBtnBookTypeG_Click);
-            // 
-            // toolStripBtnStuTypeAdd
-            // 
-            this.toolStripBtnStuTypeAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripBtnStuTypeAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBtnStuTypeAdd.Image")));
-            this.toolStripBtnStuTypeAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripBtnStuTypeAdd.Name = "toolStripBtnStuTypeAdd";
-            this.toolStripBtnStuTypeAdd.Size = new System.Drawing.Size(84, 22);
-            this.toolStripBtnStuTypeAdd.Text = "读者类别添加";
-            this.toolStripBtnStuTypeAdd.Click += new System.EventHandler(this.ToolStripBtnStuTypeAdd_Click);
             // 
             // toolStripBtnStuTypeG
             // 
@@ -231,10 +207,8 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonStuGuan;
         private System.Windows.Forms.ToolStripButton toolStripButtonBookAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonBookGuan;
-        private System.Windows.Forms.ToolStripButton toolStripButtonBookTypeAdd;
         private System.Windows.Forms.ToolStripButton toolStripButtonBookCount;
         private System.Windows.Forms.ToolStripButton toolStripBtnBookTypeG;
-        private System.Windows.Forms.ToolStripButton toolStripBtnStuTypeAdd;
         private System.Windows.Forms.ToolStripButton toolStripBtnStuTypeG;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolHelp;

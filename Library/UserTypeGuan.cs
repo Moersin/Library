@@ -25,6 +25,8 @@ namespace Library
         public const string DELETESUCCEED = "删除成功";
         public const string ISDELETE = "即将删除";
         public const string DELETEFAILED = "删除失败";
+        public const string INSERTSUCCEED = "添加成功";
+        public const string INSERTFAILED = "添加失败";
 
         List<uType> uTypes = new List<uType>();
         uTypeManager uTypeManager = new uTypeManager();
@@ -77,6 +79,18 @@ namespace Library
             return true;
         }
 
+        //非空验证
+        public bool CheckInputNotEmpty()
+        {
+            if (this.tbUserTypeAdd.Text.Trim() == " ")
+            {
+                MessageBox.Show(INPUTUSERTYPE, INPUTWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.tbUserTypeAdd.Focus();
+                return false;
+            }
+            return true;
+        }
+
         private void BtnQuery_Click(object sender, EventArgs e)
         {
             try
@@ -105,6 +119,7 @@ namespace Library
                 if (ret > 0)
                 {
                     MessageBox.Show(UPDATESUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserTypeDataBind();
                 }
                 else
                 {
@@ -115,11 +130,6 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        private void BtnReturn_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -158,6 +168,38 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, DELETEFAILED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CheckInputNotEmpty())
+                {
+                    return;
+                }
+                uType uType = new uType();
+                uType.UserType = this.tbUserTypeAdd.Text.Trim();
+                int ret = new uTypeManager().AddUserType(uType);
+                if (ret > 0)
+                {
+                    MessageBox.Show(INSERTSUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    UserTypeDataBind();
+                }
+                else
+                {
+                    MessageBox.Show(INSERTFAILED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

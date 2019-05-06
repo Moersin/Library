@@ -36,6 +36,7 @@
             this.textFormPwd = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbSelect = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butLogin
@@ -87,6 +88,7 @@
             // 
             this.textFormPwd.Location = new System.Drawing.Point(143, 113);
             this.textFormPwd.Name = "textFormPwd";
+            this.textFormPwd.PasswordChar = '*';
             this.textFormPwd.Size = new System.Drawing.Size(144, 21);
             this.textFormPwd.TabIndex = 2;
             // 
@@ -108,15 +110,25 @@
             this.cbSelect.Items.AddRange(new object[] {
             "管理员",
             "普通用户"});
-            this.cbSelect.Location = new System.Drawing.Point(110, 162);
+            this.cbSelect.Location = new System.Drawing.Point(143, 161);
             this.cbSelect.Name = "cbSelect";
             this.cbSelect.Size = new System.Drawing.Size(121, 20);
             this.cbSelect.TabIndex = 4;
             this.cbSelect.SelectedIndexChanged += new System.EventHandler(this.CbSelect_SelectedIndexChanged);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(97, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 12);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "类型";
+            // 
             // FormLogin
             // 
             this.ClientSize = new System.Drawing.Size(325, 261);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.cbSelect);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textFormPwd);
@@ -150,6 +162,7 @@
         private System.Windows.Forms.TextBox textFormPwd;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbSelect;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -70,5 +70,15 @@ namespace Library
         {
             this.Close();
         }
+
+        private void TbBookTypeAdd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -25,12 +25,26 @@ namespace Library
         public const string DELETESUCCEED = "删除成功";
         public const string ISDELETE = "即将删除";
         public const string DELETEFAILED = "删除失败";
+        public const string INSERTSUCCEED = "添加成功";
+        public const string INSERTFAILED = "添加失败";
 
         List<bType> bTypes = new List<bType>();
         bTypeManager bTypeManager = new bTypeManager();
         public BookTypeGuan()
         {
             InitializeComponent();
+        }
+
+        //非空验证
+        public bool CheckInputNotEmpty()
+        {
+            if (this.tbBookTypeAdd.Text.Trim() == " ")
+            {
+                MessageBox.Show(INPUTBOOKTYPE, INPUTWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.tbBookTypeAdd.Focus();
+                return false;
+            }
+            return true;
         }
 
         //绑定data
@@ -119,6 +133,7 @@ namespace Library
                 int ret = new bTypeManager().UpdateBookType(bType);
                 if (ret > 0)
                 {
+                    BookTypeDataBind();
                     MessageBox.Show(UPDATESUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
@@ -164,5 +179,31 @@ namespace Library
             }
         }
 
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!CheckInputNotEmpty())
+                {
+                    return;
+                }
+                bType bType = new bType();
+                bType.BookType = this.tbBookTypeAdd.Text.Trim();
+                int ret = new bTypeManager().AddBookType(bType);
+                if (ret > 0)
+                {
+                    BookTypeDataBind();
+                    MessageBox.Show(INSERTSUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(INSERTFAILED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
     }
 }

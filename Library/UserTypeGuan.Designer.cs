@@ -34,26 +34,31 @@
             this.tbUserTypeQuery = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnReturn = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.tbUserTypeId = new System.Windows.Forms.TextBox();
             this.tbUserTypeUpdate = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.uTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.libraryDataSet2 = new Library.LibraryDataSet2();
             this.userTypeTableAdapter = new Library.LibraryDataSet2TableAdapters.UserTypeTableAdapter();
+            this.tbUserTypeAdd = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.uTypeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -96,7 +101,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnReturn);
             this.groupBox2.Controls.Add(this.btnUpdate);
             this.groupBox2.Controls.Add(this.tbUserTypeId);
             this.groupBox2.Controls.Add(this.tbUserTypeUpdate);
@@ -109,19 +113,9 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "修改";
             // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(147, 89);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
-            this.btnReturn.TabIndex = 11;
-            this.btnReturn.Text = "返回";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(52, 89);
+            this.btnUpdate.Location = new System.Drawing.Point(179, 90);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 12;
@@ -181,20 +175,6 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick);
             // 
-            // uTypeIdDataGridViewTextBoxColumn
-            // 
-            this.uTypeIdDataGridViewTextBoxColumn.DataPropertyName = "uTypeId";
-            this.uTypeIdDataGridViewTextBoxColumn.HeaderText = "类别编号";
-            this.uTypeIdDataGridViewTextBoxColumn.Name = "uTypeIdDataGridViewTextBoxColumn";
-            this.uTypeIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // userTypeDataGridViewTextBoxColumn
-            // 
-            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "userType";
-            this.userTypeDataGridViewTextBoxColumn.HeaderText = "用户类别";
-            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
-            this.userTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -223,11 +203,75 @@
             // 
             this.userTypeTableAdapter.ClearBeforeFill = true;
             // 
+            // tbUserTypeAdd
+            // 
+            this.tbUserTypeAdd.Location = new System.Drawing.Point(132, 31);
+            this.tbUserTypeAdd.Name = "tbUserTypeAdd";
+            this.tbUserTypeAdd.Size = new System.Drawing.Size(112, 21);
+            this.tbUserTypeAdd.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(61, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "用户类别";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(158, 71);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "返回";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(63, 71);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.tbUserTypeAdd);
+            this.groupBox3.Controls.Add(this.btnAdd);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 337);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(273, 100);
+            this.groupBox3.TabIndex = 15;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "添加";
+            // 
+            // uTypeIdDataGridViewTextBoxColumn
+            // 
+            this.uTypeIdDataGridViewTextBoxColumn.DataPropertyName = "uTypeId";
+            this.uTypeIdDataGridViewTextBoxColumn.HeaderText = "类别编号";
+            this.uTypeIdDataGridViewTextBoxColumn.Name = "uTypeIdDataGridViewTextBoxColumn";
+            this.uTypeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userTypeDataGridViewTextBoxColumn
+            // 
+            this.userTypeDataGridViewTextBoxColumn.DataPropertyName = "userType";
+            this.userTypeDataGridViewTextBoxColumn.HeaderText = "用户类别";
+            this.userTypeDataGridViewTextBoxColumn.Name = "userTypeDataGridViewTextBoxColumn";
+            this.userTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // UserTypeGuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(297, 336);
+            this.ClientSize = new System.Drawing.Size(297, 446);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -244,6 +288,8 @@
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet2)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -255,7 +301,6 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.TextBox tbUserTypeQuery;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnReturn;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.TextBox tbUserTypeId;
         private System.Windows.Forms.TextBox tbUserTypeUpdate;
@@ -265,9 +310,14 @@
         private LibraryDataSet2 libraryDataSet2;
         private System.Windows.Forms.BindingSource userTypeBindingSource;
         private LibraryDataSet2TableAdapters.UserTypeTableAdapter userTypeTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uTypeIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.TextBox tbUserTypeAdd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uTypeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn userTypeDataGridViewTextBoxColumn;
     }
 }

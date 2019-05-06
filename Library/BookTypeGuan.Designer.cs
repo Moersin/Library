@@ -31,29 +31,34 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.tbBookTypeQuery = new System.Windows.Forms.TextBox();
             this.btnQuery = new System.Windows.Forms.Button();
+            this.tbBookTypeQuery = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.libraryDataSet1 = new Library.LibraryDataSet1();
-            this.bookTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bookTypeTableAdapter = new Library.LibraryDataSet1TableAdapters.BookTypeTableAdapter();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbBookTypeUpdate = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bookTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label3 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.删除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bookTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.libraryDataSet1 = new Library.LibraryDataSet1();
+            this.bookTypeTableAdapter = new Library.LibraryDataSet1TableAdapters.BookTypeTableAdapter();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.tbBookTypeId = new System.Windows.Forms.TextBox();
+            this.tbBookTypeUpdate = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.tbBookTypeAdd = new System.Windows.Forms.TextBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -77,13 +82,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "查询";
             // 
-            // tbBookTypeQuery
-            // 
-            this.tbBookTypeQuery.Location = new System.Drawing.Point(53, 32);
-            this.tbBookTypeQuery.Name = "tbBookTypeQuery";
-            this.tbBookTypeQuery.Size = new System.Drawing.Size(100, 21);
-            this.tbBookTypeQuery.TabIndex = 2;
-            // 
             // btnQuery
             // 
             this.btnQuery.Location = new System.Drawing.Point(159, 30);
@@ -93,6 +91,13 @@
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.BtnQuery_Click);
+            // 
+            // tbBookTypeQuery
+            // 
+            this.tbBookTypeQuery.Location = new System.Drawing.Point(53, 32);
+            this.tbBookTypeQuery.Name = "tbBookTypeQuery";
+            this.tbBookTypeQuery.Size = new System.Drawing.Size(100, 21);
+            this.tbBookTypeQuery.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -113,70 +118,19 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellClick_1);
             // 
-            // libraryDataSet1
+            // Column1
             // 
-            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
-            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Column1.DataPropertyName = "bTypeId";
+            this.Column1.HeaderText = "类别编号";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
-            // bookTypeBindingSource
+            // bookTypeDataGridViewTextBoxColumn
             // 
-            this.bookTypeBindingSource.DataMember = "BookType";
-            this.bookTypeBindingSource.DataSource = this.libraryDataSet1;
-            // 
-            // bookTypeTableAdapter
-            // 
-            this.bookTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnReturn);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.tbBookTypeId);
-            this.groupBox1.Controls.Add(this.tbBookTypeUpdate);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 244);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(248, 118);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "修改";
-            // 
-            // tbBookTypeUpdate
-            // 
-            this.tbBookTypeUpdate.Location = new System.Drawing.Point(96, 55);
-            this.tbBookTypeUpdate.Name = "tbBookTypeUpdate";
-            this.tbBookTypeUpdate.Size = new System.Drawing.Size(100, 21);
-            this.tbBookTypeUpdate.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(51, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "类别";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(131, 89);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(75, 23);
-            this.btnReturn.TabIndex = 5;
-            this.btnReturn.Text = "返回";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(38, 89);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 6;
-            this.btnUpdate.Text = "修改";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            this.bookTypeDataGridViewTextBoxColumn.DataPropertyName = "bookType";
+            this.bookTypeDataGridViewTextBoxColumn.HeaderText = "书籍类别";
+            this.bookTypeDataGridViewTextBoxColumn.Name = "bookTypeDataGridViewTextBoxColumn";
+            this.bookTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -192,19 +146,68 @@
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
-            // Column1
+            // bookTypeBindingSource
             // 
-            this.Column1.DataPropertyName = "bTypeId";
-            this.Column1.HeaderText = "类别编号";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.bookTypeBindingSource.DataMember = "BookType";
+            this.bookTypeBindingSource.DataSource = this.libraryDataSet1;
             // 
-            // bookTypeDataGridViewTextBoxColumn
+            // libraryDataSet1
             // 
-            this.bookTypeDataGridViewTextBoxColumn.DataPropertyName = "bookType";
-            this.bookTypeDataGridViewTextBoxColumn.HeaderText = "书籍类别";
-            this.bookTypeDataGridViewTextBoxColumn.Name = "bookTypeDataGridViewTextBoxColumn";
-            this.bookTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.libraryDataSet1.DataSetName = "LibraryDataSet1";
+            this.libraryDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bookTypeTableAdapter
+            // 
+            this.bookTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.tbBookTypeId);
+            this.groupBox1.Controls.Add(this.tbBookTypeUpdate);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(12, 244);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(248, 118);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "修改";
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(133, 68);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(75, 23);
+            this.btnReturn.TabIndex = 5;
+            this.btnReturn.Text = "返回";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.BtnReturn_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(159, 89);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.Text = "修改";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // tbBookTypeId
+            // 
+            this.tbBookTypeId.Location = new System.Drawing.Point(96, 23);
+            this.tbBookTypeId.Name = "tbBookTypeId";
+            this.tbBookTypeId.ReadOnly = true;
+            this.tbBookTypeId.Size = new System.Drawing.Size(100, 21);
+            this.tbBookTypeId.TabIndex = 4;
+            // 
+            // tbBookTypeUpdate
+            // 
+            this.tbBookTypeUpdate.Location = new System.Drawing.Point(96, 55);
+            this.tbBookTypeUpdate.Name = "tbBookTypeUpdate";
+            this.tbBookTypeUpdate.Size = new System.Drawing.Size(100, 21);
+            this.tbBookTypeUpdate.TabIndex = 4;
             // 
             // label3
             // 
@@ -215,19 +218,60 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "编号";
             // 
-            // tbBookTypeId
+            // label2
             // 
-            this.tbBookTypeId.Location = new System.Drawing.Point(96, 23);
-            this.tbBookTypeId.Name = "tbBookTypeId";
-            this.tbBookTypeId.ReadOnly = true;
-            this.tbBookTypeId.Size = new System.Drawing.Size(100, 21);
-            this.tbBookTypeId.TabIndex = 4;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(51, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "类别";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnReturn);
+            this.groupBox3.Controls.Add(this.tbBookTypeAdd);
+            this.groupBox3.Controls.Add(this.btnAdd);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Location = new System.Drawing.Point(12, 368);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(248, 100);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "添加";
+            // 
+            // tbBookTypeAdd
+            // 
+            this.tbBookTypeAdd.Location = new System.Drawing.Point(96, 20);
+            this.tbBookTypeAdd.Name = "tbBookTypeAdd";
+            this.tbBookTypeAdd.Size = new System.Drawing.Size(112, 21);
+            this.tbBookTypeAdd.TabIndex = 9;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(38, 68);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 8;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(37, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "图书类别";
             // 
             // BookTypeGuan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 366);
+            this.ClientSize = new System.Drawing.Size(263, 471);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox2);
@@ -239,11 +283,13 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bookTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.libraryDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,5 +315,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn bookTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.TextBox tbBookTypeId;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox tbBookTypeAdd;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label4;
     }
 }

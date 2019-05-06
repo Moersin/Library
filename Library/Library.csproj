@@ -144,6 +144,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LibraryDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LibraryDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LibraryDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StudentGuan.cs">
@@ -253,6 +258,17 @@
     </None>
     <None Include="LibraryDataSet2.xss">
       <DependentUpon>LibraryDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet3.xsc">
+      <DependentUpon>LibraryDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LibraryDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LibraryDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LibraryDataSet3.xss">
+      <DependentUpon>LibraryDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
