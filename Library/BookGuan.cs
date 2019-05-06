@@ -167,6 +167,7 @@ namespace Library
                 if (ret > 0)
                 {
                     MessageBox.Show(UPDATESUCCEED, OPERATIONWARN, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    BookDataBind();
                 }
                 else
                 {

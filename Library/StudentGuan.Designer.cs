@@ -403,6 +403,7 @@
             // 
             this.textUpdateStuId.Location = new System.Drawing.Point(51, 24);
             this.textUpdateStuId.Name = "textUpdateStuId";
+            this.textUpdateStuId.ReadOnly = true;
             this.textUpdateStuId.Size = new System.Drawing.Size(100, 21);
             this.textUpdateStuId.TabIndex = 1;
             // 

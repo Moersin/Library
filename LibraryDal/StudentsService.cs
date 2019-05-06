@@ -339,6 +339,7 @@ namespace LibraryDal
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("select * from Students");
             sb.AppendLine("where name like  @name and userType = @userType");
+            sb.AppendLine("order by loginId desc");
             //参数
             SqlParameter[] paras =
             {
@@ -388,6 +389,7 @@ namespace LibraryDal
             sb.AppendLine("select name");
             sb.AppendLine("from Students");
             sb.AppendLine("where loginId=@loginId");
+            sb.AppendLine("order by loginId desc");
             //变量赋值,设置参数
             SqlParameter[] paras =
             {

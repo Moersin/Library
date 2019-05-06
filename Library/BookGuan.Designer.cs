@@ -214,6 +214,7 @@
             // 
             this.textUpdateBookId.Location = new System.Drawing.Point(66, 32);
             this.textUpdateBookId.Name = "textUpdateBookId";
+            this.textUpdateBookId.ReadOnly = true;
             this.textUpdateBookId.Size = new System.Drawing.Size(121, 21);
             this.textUpdateBookId.TabIndex = 1;
             // 

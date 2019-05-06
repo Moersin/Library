@@ -23,6 +23,7 @@ namespace LibraryDal
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("select * from Books");
             sb.AppendLine("where bookName like @bookName and bookType = @bookType");
+            sb.AppendLine("order by bookId desc");
             //参数
             SqlParameter[] paras =
             {
@@ -74,6 +75,7 @@ namespace LibraryDal
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("select * from Books");
             sb.AppendLine("where bookName like @bookName");
+            sb.AppendLine("order by bookId desc");
             //参数
             SqlParameter[] paras =
             {
