@@ -205,18 +205,5 @@ namespace Library
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void FillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.bookTypeTableAdapter.FillBy(this.libraryDataSet1.BookType);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
     }
 }

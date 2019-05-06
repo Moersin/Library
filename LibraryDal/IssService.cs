@@ -18,6 +18,7 @@ namespace LibraryDal
         //增加借阅
         public int AddIss(Iss iss)
         {
+            //DateTime dateTime = new DateTime(3000, 01, 01);
             //sql语句
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("insert into Iss");
@@ -94,7 +95,7 @@ namespace LibraryDal
                     iss.IssBookName = Convert.ToString(reader["IssBookName"]);
                     iss.IssUserId = Convert.ToInt32(reader["IssUserId"]);
                     iss.IssBeginTime = Convert.ToDateTime(reader["IssBeginTime"]);
-                    iss.IssEndTime = Convert.ToDateTime(reader["IssEndTime"]);
+                    iss.IssEndTime = Convert.ToString(reader["IssEndTime"]);
                     isses.Add(iss);
                 }
             }
