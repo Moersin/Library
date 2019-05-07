@@ -58,5 +58,17 @@ namespace LibraryBll
                 throw ex;
             }
         }
+
+        public int UpdateBookNum(bType btype)
+        {
+            try
+            {
+                return bs.UpdateBookNum(btype);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

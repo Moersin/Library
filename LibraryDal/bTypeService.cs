@@ -21,11 +21,12 @@ namespace LibraryDal
             //sql语句
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("insert into BookType");
-            sb.AppendLine("values (@bookType)");
+            sb.AppendLine("values (@bookType,@bookNum)");
             //变量赋值,设置参数
             SqlParameter[] paras =
             {
-                new SqlParameter("@bookType",btype.BookType)
+                new SqlParameter("@bookType",btype.BookType),
+                new SqlParameter("@bookNum",btype.BookNum)
             };
             //创建连接对象
             SqlConnection conn = new SqlConnection(connString);
@@ -177,6 +178,46 @@ namespace LibraryDal
                 conn.Close();
             }
             return btype;
+        }
+        #endregion
+
+        #region 更改书籍数量
+        //更改书籍数量
+        public int UpdateBookNum(bType btype)
+        {
+            //sql语句
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("update BookType");
+            sb.AppendLine("set bookNum=@bookNum");
+            sb.AppendLine("where bookType=@bookType");
+            //变量赋值,设置参数
+            SqlParameter[] paras =
+            {
+                new SqlParameter("@bookNum",btype.BookNum),
+                new SqlParameter("@bookType",btype.BookType)
+            };
+            //创建连接对象
+            SqlConnection conn = new SqlConnection(connString);
+            try
+            {
+                //创建执行工具
+                SqlCommand cmd = new SqlCommand(sb.ToString(), conn);
+                //设置执行工具的参数
+                cmd.Parameters.AddRange(paras);
+                conn.Open();
+                //执行
+                int result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            //关闭数据库
+            finally
+            {
+                conn.Close();
+            }
         }
         #endregion
     }

@@ -38,6 +38,8 @@ namespace Library
 
         private void BookTong_Load(object sender, EventArgs e)
         {
+            // TODO: 这行代码将数据加载到表“libraryDataSet4.BookType”中。您可以根据需要移动或删除它。
+            this.bookTypeTableAdapter1.Fill(this.libraryDataSet4.BookType);
             // TODO: 这行代码将数据加载到表“libraryDataSet3.bookNum”中。您可以根据需要移动或删除它。
             //this.bookNumTableAdapter.Fill(this.libraryDataSet3.bookNum);
             // TODO: 这行代码将数据加载到表“libraryDataSet.Books”中。您可以根据需要移动或删除它。
@@ -55,6 +57,12 @@ namespace Library
                 if (NumByType > 0)
                 {
                     this.tbNumBytype.Text = Convert.ToString(NumByType);
+
+                    bType bType = new bType();
+                    bType.BookNum = Convert.ToInt32(this.tbNumBytype.Text.Trim());
+                    bType.BookType = this.cboBookType.Text.Trim();
+                    new bTypeManager().UpdateBookNum(bType);
+
                 }
                 else
                 {
@@ -105,6 +113,11 @@ namespace Library
             {
                 MessageBox.Show(ex.Message, OPERATIONFAILSED, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void Chart1_Click(object sender, EventArgs e)
+        {
+            //this.chart1.DataSource=
         }
     }
 }
